@@ -6,8 +6,9 @@ function setup() {
 	drawMap();
 	Player();
 	Enemy();
+	Bullet();
 	scanLine1 = new Sprite(50,40, 50, 2);
-	scanLine1.collider = 'kinematic';
+	scanLine1.collider = 'none'
 }
 
 function draw() {
@@ -29,18 +30,17 @@ function draw() {
 	gameTime = player.vel.mag();
 	text(gameTime, 25, 25);
 
-	if(player.collides(scanLine1))
+	if(player.y == scanLine1.y)
 	{
-		Bullet();
-		scanLine1.collider = 'none';
-		scanLine1.color = '220';
+		bulletFire();
+		console.log('passed scanline1');s
 	}
-	/*
-	if(bullet.collides(scanLine1))
+
+	if(bullet.pos == scanLine1.pos)
 	{
 		bullet.remove();
 	}
-	*/
+
 }
 
 function mouseClicked() {

@@ -1,10 +1,13 @@
-time = 1;
+let scanLine1;
+let gameTime = 1;
 
 function setup() {
 	createCanvas(600, 400);
 	drawMap();
 	Player();
 	Enemy();
+	scanLine1 = new Sprite(50,40, 50, 2);
+	scanLine1.collider = 'kinematic';
 }
 
 function draw() {
@@ -23,8 +26,21 @@ function draw() {
 	if (kb.pressing("D")) {
 		player.vel.x += 1;
 	}
-	time = player.vel.mag();
-	text(time, 25, 25);
+	gameTime = player.vel.mag();
+	text(gameTime, 25, 25);
+
+	if(player.collides(scanLine1))
+	{
+		Bullet();
+		scanLine1.collider = 'none';
+		scanLine1.color = '220';
+	}
+	/*
+	if(bullet.collides(scanLine1))
+	{
+		bullet.remove();
+	}
+	*/
 }
 
 function mouseClicked() {

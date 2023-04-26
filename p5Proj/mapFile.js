@@ -14,7 +14,7 @@ function drawMap() {
   wallLeft1 = new Sprite();
   wallLeft1.x = 5;
   wallLeft1.y = 10;
-  wallLeft1.h = canvas.height;
+  wallLeft1.h = 450;
   wallLeft1.w = 15;
   wallLeft1.color = 'grey';
   wallLeft1.stroke = 'grey';
@@ -24,7 +24,7 @@ function drawMap() {
   WallRight1.x = 200;
   WallRight1.y = 0;
   WallRight1.w = 200;
-  WallRight1.h = canvas.height/2.5;
+  WallRight1.h = 315;
   WallRight1.color = 'grey';
   WallRight1.stroke = 'grey';
   WallRight1.collider = 'static';

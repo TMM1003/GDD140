@@ -1,11 +1,11 @@
-time = 1;
+worldTime = 1;
 let enemies = [];
 
 function setup() {
 	createCanvas(600, 400);
 	drawMap();
 	Player();
-	enemies.push(new enemy(55,50,80,10,50,150))
+	enemies.push(new enemy(55,50,80,10,50,150,50))
 }
 
 function draw() {
@@ -24,12 +24,10 @@ function draw() {
 	if (kb.pressing("D")) {
 		player.vel.x += 1;
 	}
-	time = player.vel.mag();
-	text(time, 25, 25);
+	worldTime = player.vel.mag();
+	text(worldTime, 25, 25);
 
-	for (let i = 0; i < enemies.length; i++) {
-		enemies[i].update();
-	}
+	
 }
 
 function mouseClicked() {

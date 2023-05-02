@@ -1,10 +1,13 @@
 time = 1;
+let enemies = [];
 
 function setup() {
 	createCanvas(600, 400);
 	drawMap();
 	Player();
-	Enemy();
+
+	enemies.push(new enemy(50,200,20,20,50,150))
+
 }
 
 function draw() {

@@ -1,5 +1,4 @@
 class bullet {
     bullets = new Group();
-    color = 'yellow';
-    bullets
+    color = 'yellow'; 
 }

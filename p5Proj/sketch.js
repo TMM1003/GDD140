@@ -10,7 +10,6 @@ function setup() {
 
 function draw() {
 	background(220);
-
 	//Player Movement
 	if (kb.pressing("W")) {
 		player.vel.y -= 1;
@@ -29,6 +28,9 @@ function draw() {
 
 	for (let i = 0; i < enemies.length; i++) {
 		enemies[i].update();
+	}
+	if (player.collides(bullets.Group)) {
+		console.log("Hit");
 	}
 }
 

@@ -1,19 +1,15 @@
-let scanLine1;
-let gameTime = 1;
+worldTime = 1;
+let enemies = [];
 
 function setup() {
 	createCanvas(600, 400);
 	drawMap();
 	Player();
-	Enemy();
-	Bullet();
-	scanLine1 = new Sprite(50,40, 50, 2);
-	scanLine1.collider = 'none'
+	enemies.push(new enemy(55, 180, 10, 10, 50, 80, 50, 20));
 }
 
 function draw() {
 	background(220);
-
 	//Player Movement
 	if (kb.pressing("W")) {
 		player.vel.y -= 1;
@@ -27,20 +23,15 @@ function draw() {
 	if (kb.pressing("D")) {
 		player.vel.x += 1;
 	}
-	gameTime = player.vel.mag();
-	text(gameTime, 25, 25);
+	worldTime = player.vel.mag();
+	text(worldTime, 25, 25);
 
-	if(player.y == scanLine1.y)
-	{
-		bulletFire();
-		console.log('passed scanline1');s
+	for (let i = 0; i < enemies.length; i++) {
+		enemies[i].update();
 	}
-
-	if(bullet.pos == scanLine1.pos)
-	{
-		bullet.remove();
+	if (player.collides(bullets.Group)) {
+		console.log("Hit");
 	}
-
 }
 
 function mouseClicked() {

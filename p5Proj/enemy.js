@@ -34,5 +34,5 @@ bullets = new Sprite(enemy.x,enemy.y)
     bullets.length = 3;
     //let shot = new bullets.Sprite(enemy.x,enemy.y);
     bullet.moveTowards(player);
-	test if github updated the right stuff
+	test if github updated the right stuff pt 2
 */

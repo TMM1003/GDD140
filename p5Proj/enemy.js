@@ -3,7 +3,7 @@ class enemy {
 		this.sprite = new Sprite(x, y, w, h);
 		this.trigger = new Sprite(trigx, trigy, trigw, trigh);
 		this.trigger.collider = "none";
-    this.active = false;
+		this.active = false;
 	}
 
 	update() {

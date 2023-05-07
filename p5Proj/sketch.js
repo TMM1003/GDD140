@@ -5,7 +5,8 @@ function setup() {
 	createCanvas(600, 400);
 	drawMap();
 	Player();
-	enemies.push(new enemy(55, 180, 10, 10, 50, 80, 50, 20));
+	//constructor         (x,   y,  w,   h, trigx, trigy, trigw, trigh)
+	enemies.push(new enemy(50, 180, 20, 20, 50   , 50,     70,    10));
 }
 
 function draw() {
@@ -29,9 +30,11 @@ function draw() {
 	for (let i = 0; i < enemies.length; i++) {
 		enemies[i].update();
 	}
+	/*
 	if (player.collides(bullets.Group)) {
 		console.log("Hit");
 	}
+	*/
 }
 
 function mouseClicked() {

@@ -31,16 +31,16 @@ function drawMap() {
   
   WallRight1Ext = new Sprite();
   WallRight1Ext.x = 275;
-  WallRight1Ext.y = 200;
+  WallRight1Ext.y = 175;
   WallRight1Ext.w = 50;
-  WallRight1Ext.h = 150;
+  WallRight1Ext.h = 200;
   WallRight1Ext.color = 'grey';
   WallRight1Ext.stroke = 'grey';
   WallRight1Ext.collider = 'static';
   
   WallBottom1 = new Sprite();
   WallBottom1.x = 38;
-  WallBottom1.y = 250;
+  WallBottom1.y = 230;
   WallBottom1.w = 320;
   WallBottom1.h = 50;
   WallBottom1.color = 'grey';

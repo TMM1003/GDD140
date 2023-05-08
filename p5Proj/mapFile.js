@@ -98,6 +98,6 @@ function drawMap() {
   barrier3.h = 25;
   barrier3.w = 25;
   barrier3.color = 'dimgrey';
-  barrier3.stroke = 'dimgrey';
+  barrier3.stroke = 'grey';
   barrier3.collider = 'static';
 }

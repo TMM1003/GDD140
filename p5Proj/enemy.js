@@ -2,6 +2,7 @@ let hitCheck = 0;
 let reload = 0;
 var bullet;
 
+
 class enemy {
 	constructor(enemyX, enemyY, w, h, trigx, trigy, trigw, trigh) {
 		this.sprite = new Sprite(enemyX, enemyY, w, h);
@@ -13,15 +14,15 @@ class enemy {
 		this.trigger.stroke = 'darkgrey';
 		this.bullet = new Sprite(enemyX,enemyY - 10,5,5);
 		this.bullet.color = (220);
-		this.bullet.stroke = (220);
+		this.bullet.stroke = 'red';
 		this.trigger.color = 220;
 		this.trigger.collider = "none";
 		this.active = false;
 		this.trigy = trigy;
 		//Temp Cam
 		camera.x = player.x;
-		camera.y = player.pos;
-		camera.zoom = 1.5;
+		camera.y = player.y;
+		camera.zoom = 1;
 		
 		/*
 		camera.x = player.x;
@@ -39,12 +40,25 @@ class enemy {
 				this.bullet.color = "yellow";
 				this.bullet.moveTo(player);
 				print("player pos is: " + player.x)
+				
 				/*
 				camera.x = player.x;
 				camera.y = player.pos;
 				camera.zoom = 1.5;
 				*/
 			}
+		
+		//time mechanic?
+		if (kb.pressing("S") || kb.pressing('down')) {
+			//this.bullet.vel = this.bullet.vel;
+			this.bullet.vel = player.vel.mag();
+		}
+		else
+		{
+			this.bullet.vel = this.bullet.vel;
+		}
+
+
 		}
 		if (player.collides(this.bullet)) 
 		{
@@ -62,8 +76,7 @@ class enemy {
 			player.remove();
 			this.bullet.remove();
 		}
-	}
-	slowTime() {
-		bullet.vel.x = player.vel.mag();
+
+
 	}
 }

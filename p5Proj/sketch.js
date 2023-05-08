@@ -16,11 +16,9 @@ function draw() {
 	//Player Movement
 	if (kb.pressing("W") || kb.pressing('up')) {
 		player.vel.y -= 1;
-		slowTime();
 	}
 	if (kb.pressing("S") || kb.pressing('down')) {
 		player.vel.y += 1;
-		
 	}
 	if (kb.pressing("A") || kb.pressing('left')) {
 		player.vel.x -= 1;

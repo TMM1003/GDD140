@@ -1,4 +1,5 @@
 var player;
+//var playerMagnitude;
 function Player() 
 {
   //Constructor
@@ -8,5 +9,6 @@ function Player()
   player.collider = 'dynamic';
   player.drag = 20;
   player.rotationLock = true;
+  //playerMagnitude = Math.sqrt((player.x * player.x) + (player.y * player.y));
 }
   

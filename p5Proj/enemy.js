@@ -39,8 +39,3 @@ class enemy {
 		}
 	}
 }
-
-
-/*
-	test if github updated the right stuff pt 2
-*/

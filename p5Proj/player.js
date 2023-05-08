@@ -1,4 +1,5 @@
-function Player() {
+function Player() 
+{
   //Constructor
   player = new Sprite(50,20,20,20);
   player.color = 'salmon';
@@ -6,5 +7,5 @@ function Player() {
   player.collider = 'dynamic';
   player.drag = 20;
   player.rotationLock = true;
-  }
+}
   

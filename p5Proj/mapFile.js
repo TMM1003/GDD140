@@ -9,6 +9,8 @@ let barrier;
 let barrier2;
 let barrier3;
 
+let thisTextIsHereToConfirmIfGithubHasTheRightStuff250pm;
+
 function drawMap() {
   //walls
   wallLeft1 = new Sprite();
@@ -17,7 +19,7 @@ function drawMap() {
   wallLeft1.h = canvas.height;
   wallLeft1.w = 100;
   wallLeft1.color = 'grey';
-  wallLeft1.stroke = 'grey'; //this text is here to confirm if github has the right stuff as of 2:40 pm 5/8/23
+  wallLeft1.stroke = 'grey';
   wallLeft1.collider = 'static'; 
   
   WallRight1 = new Sprite();

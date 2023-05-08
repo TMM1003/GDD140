@@ -5,23 +5,27 @@ function setup() {
 	createCanvas(600, 400);
 	drawMap();
 	Player();
-	//constructor         (x,   y,  w,   h, trigx, trigy, trigw, trigh)
-	enemies.push(new enemy(50, 180, 20, 20, 50   , 50,     70,    10));
+	//constructor          (x,   y,   w,   h, trigx, trigy,  trigw, trigh)
+	enemies.push(new enemy(50, 180, 20,  20, 50   , 50,     70,    10));
+	//move to later- x: 230, y:140
+	enemies.push(new enemy(230, 100, 20,  20, 130   , 150,  10,    100));
 }
 
 function draw() {
 	background(220);
 	//Player Movement
-	if (kb.pressing("W")) {
+	if (kb.pressing("W") || kb.pressing('up')) {
 		player.vel.y -= 1;
+		slowTime();
 	}
-	if (kb.pressing("S")) {
+	if (kb.pressing("S") || kb.pressing('down')) {
 		player.vel.y += 1;
+		
 	}
-	if (kb.pressing("A")) {
+	if (kb.pressing("A") || kb.pressing('left')) {
 		player.vel.x -= 1;
 	}
-	if (kb.pressing("D")) {
+	if (kb.pressing("D") || kb.pressing('right')) {
 		player.vel.x += 1;
 	}
 	worldTime = player.vel.mag();
@@ -30,11 +34,6 @@ function draw() {
 	for (let i = 0; i < enemies.length; i++) {
 		enemies[i].update();
 	}
-
-	//Camera
-	camera.x = player.x;
-	camera.y = player.y+20;
-	camera.zoom = 2;
 }
 
 function mouseClicked() {

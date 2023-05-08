@@ -12,12 +12,12 @@ let barrier3;
 function drawMap() {
   //walls
   wallLeft1 = new Sprite();
-  wallLeft1.x = 5;
+  wallLeft1.x = -50;
   wallLeft1.y = 10;
   wallLeft1.h = canvas.height;
-  wallLeft1.w = 15;
+  wallLeft1.w = 100;
   wallLeft1.color = 'grey';
-  wallLeft1.stroke = 'grey';
+  wallLeft1.stroke = 'grey'; //this text is here to confirm if github has the right stuff as of 2:40 pm 5/8/23
   wallLeft1.collider = 'static'; 
   
   WallRight1 = new Sprite();

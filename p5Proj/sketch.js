@@ -30,11 +30,11 @@ function draw() {
 	for (let i = 0; i < enemies.length; i++) {
 		enemies[i].update();
 	}
-	/*
-	if (player.collides(bullets.Group)) {
-		console.log("Hit");
-	}
-	*/
+
+	//Camera
+	camera.x = player.x;
+	camera.y = player.y+20;
+	camera.zoom = 2;
 }
 
 function mouseClicked() {

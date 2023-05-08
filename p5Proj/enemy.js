@@ -16,12 +16,13 @@ class enemy {
 				this.trigger = null;
 				print("Hit trigger, activating ");
 				this.bullet.moveTo(player);
-				if (this.bullet.y >= this.trigy)
-				{
-					print('hit the trig line');
-					this.bullet.remove();
-				}
+
 			}
+		}
+		if (this.bullet.y >= this.trigy)
+		{
+			print('hit the trig line');
+			this.bullet.remove();
 		}
 	}
 }

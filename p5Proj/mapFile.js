@@ -9,7 +9,7 @@ let barrier;
 let barrier2;
 let barrier3;
 
-let thisTextIsHereToConfirmIfGithubHasTheRightStuff250pm;
+let thisTextIsHereToConfirmIfGithubHasTheRightStuff302pm;
 
 function drawMap() {
   //walls

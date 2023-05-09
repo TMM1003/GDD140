@@ -31,8 +31,10 @@ class enemy {
 		*/
 	}
 	update() {
-		if (this.active == false) {
-			if (this.trigger.overlaps(player)) {
+		if (this.active == false) 
+		{
+			if (this.trigger.overlaps(player)) 
+			{
 				this.active = true;
 				this.trigger.remove();
 				this.trigger = null;
@@ -48,18 +50,18 @@ class enemy {
 				*/
 			}
 		
-		//time mechanic?
-		if (kb.pressing("S") || kb.pressing('down')) {
-			//this.bullet.vel = this.bullet.vel;
-			this.bullet.vel = player.vel.mag();
-		}
-		else
-		{
-			this.bullet.vel = this.bullet.vel;
+			//time mechanic?
+			if (kb.pressing("S") || kb.pressing('down')) 
+			{
+				//this.bullet.vel = this.bullet.vel;
+				this.bullet.vel = player.vel.mag();
+			}
+			else
+			{
+				this.bullet.vel = this.bullet.vel;
+			}
 		}
 
-
-		}
 		if (player.collides(this.bullet)) 
 		{
 			console.log("Hit");
@@ -76,7 +78,5 @@ class enemy {
 			player.remove();
 			this.bullet.remove();
 		}
-
-
 	}
 }

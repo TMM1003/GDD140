@@ -1,39 +1,46 @@
-worldTime = 1;
+let player;
 let enemies = [];
 
 function setup() {
-	createCanvas(600, 400);
-	drawMap();
-	Player();
-	//constructor          (x,   y,   w,   h, trigx, trigy,  trigw, trigh)
-	enemies.push(new enemy(50, 180, 20,  20, 50   , 50,     70,    10));
-	//move to later- x: 230, y:140
-	enemies.push(new enemy(230, 100, 20,  20, 130   , 150,  10,    100));
+  createCanvas(600, 400);
+  drawMap();
+  player = new Player();
+
+  const initialPlayerPosition = createVector(player.sprite.x, player.sprite.y);
+
+  enemies.push(new Enemy(50, 180, 20, 20, "North"));
+  enemies.push(new Enemy(230, 100, 20, 20, "West"));
+  enemies.push(new Enemy(100, 280, 20, 20, "East"));
+  enemies.push(new Enemy(100, 320, 20, 20, "East"));
+  enemies.push(new Enemy(560, 30, 20, 20, "West"));
+
+  enemies.push(new Enemy(445, 170, 20, 20, "East"));
+  enemies.push(new Enemy(555, 170, 20, 20, "West"));
+  enemies.push(new Enemy(500, 260, 20, 20, "South"));
+
+
+
+  for (let i = 0; i < enemies.length; i++) {
+    const enemy = enemies[i];
+    enemy.initialPlayerPosition = initialPlayerPosition;
+  }
 }
 
 function draw() {
-	background(220);
-	//Player Movement
-	if (kb.pressing("W") || kb.pressing('up')) {
-		player.vel.y -= 1;
-	}
-	if (kb.pressing("S") || kb.pressing('down')) {
-		player.vel.y += 1;
-	}
-	if (kb.pressing("A") || kb.pressing('left')) {
-		player.vel.x -= 1;
-	}
-	if (kb.pressing("D") || kb.pressing('right')) {
-		player.vel.x += 1;
-	}
-	worldTime = player.vel.mag();
-	text(worldTime, 25, 25);
+  background(220);
 
-	for (let i = 0; i < enemies.length; i++) {
-		enemies[i].update();
-	}
+  // Player Movement
+  player.update();
+  let playerVelocityMagnitude = player.sprite.vel.mag();
+  worldTime = playerVelocityMagnitude;
+  text("Player Speed: " + worldTime, 25, 100); // Display player's speed
+
+  for (let i = 0; i < enemies.length; i++) {
+    const enemy = enemies[i];
+    enemy.update(player.sprite);
+  }
 }
 
 function mouseClicked() {
-	console.log("Mouse clicked at x:" + mouseX + ", y:" + mouseY);
+  console.log("Mouse clicked at x:" + mouseX + ", y:" + mouseY);
 }

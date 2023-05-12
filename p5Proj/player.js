@@ -1,14 +1,30 @@
-var player;
-//var playerMagnitude;
-function Player() 
-{
-  //Constructor
-  player = new Sprite(50,20,20,20);
-  player.color = 'salmon';
-  player.stroke = 'salmon';
-  player.collider = 'dynamic';
-  player.drag = 20;
-  player.rotationLock = true;
-  //playerMagnitude = Math.sqrt((player.x * player.x) + (player.y * player.y));
-}
+class Player {
+  constructor() 
+  {
+    this.sprite = new Sprite(50, 20, 20, 20);
+    this.sprite.color = 'salmon';
+    this.sprite.stroke = 'salmon';
+    this.sprite.collider = 'dynamic';
+    this.sprite.drag = 20;
+    this.sprite.rotationLock = true;
+  }
+  update() {
+    if (kb.pressing("W") || kb.pressing('up')) {
+      this.sprite.vel.y -= 0.75;
+    }
+    if (kb.pressing("S") || kb.pressing('down')) {
+      this.sprite.vel.y += 0.75;
+    }
+    if (kb.pressing("A") || kb.pressing('left')) {
+      this.sprite.vel.x -= 0.75;
+    }
+    if (kb.pressing("D") || kb.pressing('right')) {
+      this.sprite.vel.x += 0.75;
+    }
+  }
   
+  remove() 
+  {
+    this.sprite.remove();
+  }
+}
